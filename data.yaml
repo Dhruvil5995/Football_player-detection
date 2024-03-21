@@ -1,0 +1,6 @@
+train: E:\python_projects_CV\yolov8_football\train
+val: E:\python_projects_CV\yolov8_football\valid
+test: E:\python_projects_CV\yolov8_football\test
+
+nc: 4
+names: ['ball', 'goalkeeper', 'players', 'referee']
