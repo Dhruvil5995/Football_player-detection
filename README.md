@@ -1,7 +1,7 @@
 # YOLOv8 Object Detection in Videos
 
 ## Description
-This project utilizes the YOLOv8 object detection model to identify and annotate objects in video streams. The script reads a video file, processes it frame by frame using YOLOv8, 
+This project utilizes the YOLOv8 object detection model to identify and annotate objects (Football, players, referee, goalkeeper) in video streams. The script reads a video file, processes it frame by frame using YOLOv8, 
 and displays the annotated video in real-time.
 
 
