@@ -10,22 +10,6 @@ model = YOLO("E:\\python_projects_CV\\yolov8_football\\best.pt")  # Ensure your 
 video_path = "E:\\python_projects_CV\\yolov8_football\\check\\football.mp4"
 cap = cv2.VideoCapture(video_path)
 
-""""
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
-        break
-
-    # Get predictions for the current frame
-    results = model(frame)
-
-    for r in results:
-        box = r.boxes
-        print(box.xyxy[1:5])
-        
-"""
-
-
 while cap.isOpened():
     # Read a frame from the video
     success, frame = cap.read()
