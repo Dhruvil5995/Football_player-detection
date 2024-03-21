@@ -1,0 +1,53 @@
+from ultralytics import YOLO
+import torch
+import cv2
+
+#model = YOLO ('yolov8m.pt')
+#results = model.train(data='data.yaml', epochs=10, imgsz=640)
+
+model = YOLO("E:\\python_projects_CV\\yolov8_football\\best.pt")  # Ensure your model path is correct
+
+video_path = "E:\\python_projects_CV\\yolov8_football\\check\\football.mp4"
+cap = cv2.VideoCapture(video_path)
+
+""""
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # Get predictions for the current frame
+    results = model(frame)
+
+    for r in results:
+        box = r.boxes
+        print(box.xyxy[1:5])
+        
+"""
+
+
+while cap.isOpened():
+    # Read a frame from the video
+    success, frame = cap.read()
+
+    if success:
+        # Run YOLOv8 inference on the frame
+        results = model(frame)
+
+        # Visualize the results on the frame
+        annotated_frame = results[0].plot()
+
+        # Display the annotated frame
+        cv2.imshow("YOLOv8 Inference", annotated_frame)
+
+        # Break the loop if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
+    else:
+        # Break the loop if the end of the video is reached
+        break
+
+# Release the video capture object and close the display window
+cap.release()
+cv2.destroyAllWindows()
+
