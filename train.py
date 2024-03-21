@@ -5,9 +5,9 @@ import cv2
 #model = YOLO ('yolov8m.pt')
 #results = model.train(data='data.yaml', epochs=10, imgsz=640)
 
-model = YOLO("E:\\python_projects_CV\\yolov8_football\\best.pt")  # Ensure your model path is correct
+model = YOLO("path\of your\model")  # Ensure your model path is correct
 
-video_path = "E:\\python_projects_CV\\yolov8_football\\check\\football.mp4"
+video_path = "path\of your\fiel"
 cap = cv2.VideoCapture(video_path)
 
 while cap.isOpened():
